@@ -1,19 +1,16 @@
-'use strict'
+// Importar Express
+const express = require('express');
 
-var mongoose = require('mongoose');
-var app = require('./app')
-var port = process.env.PORT || 3800
+// Crear una instancia de la aplicación Express
+const app = express();
 
-//conexion database
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/blog')
-	.then(()=>{
-		console.log("La conexion a la base de datos se ha realizado correctamente")
+// Definir la ruta GET
+app.get('/', (req, res) => {
+    res.send('¡Hola, mundo!');
+});
 
-		//crear servidor
-		app.listen(port, ()=>{
-			console.log("Servidor corriendo en http://localhost:3800")
-		})
-
-	})
-	.catch(err => console.log(err))
+// Configurar el servidor para que escuche en el puerto 3000
+const PORT = process.env.PORT || 3800;
+app.listen(PORT, () => {
+    console.log(`Servidor escuchando en el puerto ${PORT}`);
+});
