@@ -11,9 +11,9 @@ var app = express()
 const cors = require('cors');
 
 
-//middlewares
-app.use(bodyParser.urlencoded({extended:false}))
-app.use(bodyParser.json())
+// //middlewares
+// app.use(bodyParser.urlencoded({extended:false}))
+// app.use(bodyParser.json())
 
 
 //cors
