@@ -1,16 +1,11 @@
-var express = require('express')
+const express = require('express')
+const controller = require('../controllers/controllers')
 
-function prueba(req, res) {
-	res.status(200).send({
-		message: 'hola mundo desde Node'
-	})
-}
-
-var api = express.Router()
+const api = express.Router()
 
 // var multipart = require('connect-multiparty')
 // var md_upload = multipart({uploadDir: './uploads/users'})
 
-api.get('/', prueba)
+api.get('/', controller.prueba)
 
 module.exports = api
