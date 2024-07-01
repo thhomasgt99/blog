@@ -7,6 +7,6 @@ const api = express.Router()
 // var md_upload = multipart({uploadDir: './uploads/users'})
 
 api.get('/', controller.prueba)
-api.post('/login', controller.saveUser)
+// api.post('/login', controller.saveUser)
 
 module.exports = api
