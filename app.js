@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser')
+var user_routes = require('./routes/routes')
 
 const app = express();
 
@@ -11,9 +12,5 @@ app.use(bodyParser.json())
 
 app.use(cors());
 
-
-app.get('/', (req, res) => {
-	res.send('¡Hola desde app!');
-});
-
+app.use('/api', user_routes)
 module.exports = app
