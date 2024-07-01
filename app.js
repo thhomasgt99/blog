@@ -2,8 +2,20 @@
 
 var express = require('express')
 // var bodyParser = require('body-parser')
-var routes = require('./routes/routes')
+// var routes = require('./routes/routes')
 var app = express()
+
+var express = require('express')
+
+var api = express.Router()
+
+function prueba(req, res) {
+	res.status(200).send({
+		message: 'hola mundo desde Node'
+	})
+}
+
+api.get('/', prueba)
 
 //cargar rutas
 // var user_routes = require('./routes/userRoute')
@@ -21,7 +33,7 @@ app.use(cors());
 
 //rutas
 // app.use('/api', ()=>{
-app.use('/', routes)
+// app.use('/', routes)
 
 //exportar
 module.exports = app
